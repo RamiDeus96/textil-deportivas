@@ -1,0 +1,50 @@
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand-wrap">
+      <div class="brand-mark">TD</div>
+      <div>
+        <strong>Textil Deportivas</strong>
+        <small>ERP demo</small>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a
+        *ngFor="let item of navItems"
+        [routerLink]="item.path"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: false }"
+      >
+        <span class="nav-icon">{{ item.icon }}</span>
+        <span>{{ item.label }}</span>
+      </a>
+    </nav>
+  </aside>
+
+  <main class="workspace">
+    <header class="topbar">
+      <div class="search-box">
+        <span>⌕</span>
+        <input type="text" placeholder="Buscar dashboard, productos o ventas" />
+      </div>
+
+      <div class="topbar-actions">
+        <div class="store-pill">
+          <span class="dot"></span>
+          Sucursal Centro
+        </div>
+        <div class="user-chip">
+          <span class="avatar">MS</span>
+          <div>
+            <strong>María Solís</strong>
+            <small>Gerente</small>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-body">
+      <router-outlet />
+    </div>
+  </main>
+</div>
